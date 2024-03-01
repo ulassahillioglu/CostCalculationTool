@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1088</width>
-    <height>701</height>
+    <width>1121</width>
+    <height>710</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
        <string notr="true">font: 57 14pt &quot;Montserrat Medium&quot;;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab1">
        <attribute name="title">
@@ -32,16 +32,19 @@
          <rect>
           <x>10</x>
           <y>20</y>
-          <width>1021</width>
-          <height>541</height>
+          <width>1061</width>
+          <height>551</height>
          </rect>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
+         <enum>Qt::TabFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">font: 75 10pt &quot;Century Gothic&quot;;
 font: 75 11pt &quot;Century Gothic&quot;;</string>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustToContents</enum>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
@@ -605,6 +608,9 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
          </item>
          <item row="8" column="6">
           <widget class="QPushButton" name="btnCalculate">
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
            <property name="text">
             <string>Calculate</string>
            </property>
@@ -614,6 +620,9 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
           <widget class="QPushButton" name="btnClear">
            <property name="enabled">
             <bool>true</bool>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="text">
             <string>Clear</string>
@@ -632,7 +641,7 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1088</width>
+     <width>1121</width>
      <height>21</height>
     </rect>
    </property>
@@ -645,4 +654,3 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
  <resources/>
  <connections/>
 </ui>
-
