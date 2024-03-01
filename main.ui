@@ -21,7 +21,7 @@
        <string notr="true">font: 57 14pt &quot;Montserrat Medium&quot;;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab1">
        <attribute name="title">
@@ -37,7 +37,7 @@
          </rect>
         </property>
         <property name="focusPolicy">
-         <enum>Qt::TabFocus</enum>
+         <enum>Qt::NoFocus</enum>
         </property>
         <property name="styleSheet">
          <string notr="true">font: 75 10pt &quot;Century Gothic&quot;;
@@ -650,6 +650,30 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
  </widget>
  <tabstops>
   <tabstop>mainTab</tabstop>
+  <tabstop>boxWebsite</tabstop>
+  <tabstop>boxQuality</tabstop>
+  <tabstop>boxSM</tabstop>
+  <tabstop>boxProduct</tabstop>
+  <tabstop>boxCountry</tabstop>
+  <tabstop>lineProvider</tabstop>
+  <tabstop>lineSrvPrice</tabstop>
+  <tabstop>lineEdit2</tabstop>
+  <tabstop>lineEdit7</tabstop>
+  <tabstop>lineEdit5</tabstop>
+  <tabstop>lineEdit8</tabstop>
+  <tabstop>lineEdit9</tabstop>
+  <tabstop>lineEdit10</tabstop>
+  <tabstop>lineEdit14</tabstop>
+  <tabstop>lineEdit4</tabstop>
+  <tabstop>lineEdit11</tabstop>
+  <tabstop>lineEdit12</tabstop>
+  <tabstop>lineEdit3</tabstop>
+  <tabstop>lineEdit13</tabstop>
+  <tabstop>lineEdit6</tabstop>
+  <tabstop>lineEdit1</tabstop>
+  <tabstop>lineEdit15</tabstop>
+  <tabstop>btnCalculate</tabstop>
+  <tabstop>btnClear</tabstop>
  </tabstops>
  <resources/>
  <connections/>
