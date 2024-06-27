@@ -90,7 +90,7 @@ class MainApp(QMainWindow, FORM_CLASS):
             "250000",
             "500000",
         ]
-        quantities_comments = ["10", "20", "30", "40", "50", "100"]
+        quantities_comments = ["10", "20", "30", "40", "50", "100","250","500"]
 
         main_list = []
         website = self.boxWebsite.currentText()
@@ -119,14 +119,14 @@ class MainApp(QMainWindow, FORM_CLASS):
                 line_edit = self.findChild(QLineEdit, line_edit_name)
                 our_price = float(line_edit.text())
 
-                if website.lower() == "instatakipci":
+                if website.lower() == "it":
                     auto_price = our_price * 4
                     auto_price_with_scraper = auto_price + self.tr_scraper
                 else:
                     auto_price = round(our_price * 2.25, 3)
                     auto_price_with_scraper = auto_price + self.en_scraper
 
-                if website.lower() == "instatakipci" and chosen_currency == "USD":
+                if website.lower() == "it" and chosen_currency == "USD":
                     srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
                 else:
                     srv_price = float(self.lineSrvPrice.text())
@@ -181,7 +181,7 @@ class MainApp(QMainWindow, FORM_CLASS):
             "250000",
             "500000",
         ]
-        quantities_comments = ["10","20","30","40","50","100"]
+        quantities_comments = ["10","20","30","40","50","100","250","500"]
 
         main_list = []
         website = self.boxWebsite.currentText()
@@ -206,15 +206,15 @@ class MainApp(QMainWindow, FORM_CLASS):
             if len(quantities)<=6:
                 try:
                     line_edit = self.findChild(QLineEdit, f"comment{index+1}")
-                    if website.lower() == "popularos":
+                    if website.lower() == "pop":
                         our_price = round(float(line_edit.text())*self.exchange_rate_real,2)
                         srv_price = float(self.lineSrvPrice.text())*self.exchange_rate_real
 
-                    elif website.lower()=='instatakipci' and chosen_currency == "USD":
+                    elif website.lower()=='it' and chosen_currency == "USD":
                         our_price = round(float(line_edit.text()),2)
                         srv_price = float(self.lineSrvPrice.text())*self.exchange_rate
 
-                    elif website.lower()=="instafollowers" and chosen_currency == "TRY":
+                    elif website.lower()=="if" and chosen_currency == "TRY":
                         our_price = round(float(line_edit.text()),2)
                         srv_price = float(self.lineSrvPrice.text())/self.exchange_rate
                     else:
@@ -248,15 +248,15 @@ class MainApp(QMainWindow, FORM_CLASS):
             else:
                 try:
                     line_edit = self.findChild(QLineEdit, f"lineEdit{index+1}")
-                    if website.lower() == "popularos":
+                    if website.lower() == "pop":
                         our_price = round(float(line_edit.text())*self.exchange_rate_real,2)
                         srv_price = float(self.lineSrvPrice.text())*self.exchange_rate_real
 
-                    elif website.lower()=='instatakipci' and chosen_currency == "USD":
+                    elif website.lower()=='it' and chosen_currency == "USD":
                         our_price = round(float(line_edit.text()),2)
                         srv_price = float(self.lineSrvPrice.text())*self.exchange_rate
                     
-                    elif website.lower()=="instafollowers" and chosen_currency == "TRY":
+                    elif website.lower()=="if" and chosen_currency == "TRY":
                         our_price = round(float(line_edit.text()),2)
                         srv_price = float(self.lineSrvPrice.text())/self.exchange_rate
 
