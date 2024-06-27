@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1121</width>
-    <height>710</height>
+    <height>714</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,9 +39,13 @@
         <property name="focusPolicy">
          <enum>Qt::NoFocus</enum>
         </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
         <property name="styleSheet">
          <string notr="true">font: 75 10pt &quot;Century Gothic&quot;;
-font: 75 11pt &quot;Century Gothic&quot;;</string>
+font: 75 11pt &quot;Century Gothic&quot;;
+</string>
         </property>
         <property name="sizeAdjustPolicy">
          <enum>QAbstractScrollArea::AdjustToContents</enum>
@@ -165,6 +169,20 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
          <string>Details</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Social Media</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>Quality</string>
+           </property>
+          </widget>
+         </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_18">
            <property name="text">
@@ -199,81 +217,11 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
              <string>Random</string>
             </property>
            </item>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_17">
-           <property name="text">
-            <string>Social Media</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_20">
-           <property name="text">
-            <string>Country</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QComboBox" name="boxSM">
            <item>
             <property name="text">
-             <string>Instagram</string>
+             <string>AI Content</string>
             </property>
            </item>
-           <item>
-            <property name="text">
-             <string>Tiktok</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Twitter</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Facebook</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Youtube</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Spotify</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Telegram</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Twitch</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>LinkedIn</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Soundcloud</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_19">
-           <property name="text">
-            <string>Quality</string>
-           </property>
           </widget>
          </item>
          <item row="3" column="0">
@@ -343,6 +291,117 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
              <string>Page Likes</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>Impressions</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Profile Visits</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Poll Votes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Members</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Saves</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Impressions</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Live Viewers</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QComboBox" name="boxSM">
+           <item>
+            <property name="text">
+             <string>Instagram</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tiktok</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Twitter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Facebook</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Youtube</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Spotify</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Telegram</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Twitch</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>LinkedIn</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Soundcloud</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Threads</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Discord</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vimeo</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>Country</string>
+           </property>
           </widget>
          </item>
          <item row="7" column="0">
@@ -409,30 +468,14 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
          <rect>
           <x>10</x>
           <y>20</y>
-          <width>511</width>
-          <height>551</height>
+          <width>491</width>
+          <height>601</height>
          </rect>
         </property>
         <property name="title">
          <string>Quantities</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit2"/>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="lineEdit7"/>
-         </item>
-         <item row="7" column="5">
-          <widget class="QLabel" name="label_15">
-           <property name="text">
-            <string>500000</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineEdit5"/>
-         </item>
          <item row="0" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
@@ -440,99 +483,8 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
            </property>
           </widget>
          </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>250</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="6">
-          <widget class="QLineEdit" name="lineEdit8"/>
-         </item>
-         <item row="3" column="5">
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>25000</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>500</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>1000</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="4">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="6" column="5">
-          <widget class="QLabel" name="label_14">
-           <property name="text">
-            <string>250000</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="6">
-          <widget class="QLineEdit" name="lineEdit9"/>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_4">
-           <property name="text">
-            <string>100</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="5">
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>50000</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="6">
-          <widget class="QLineEdit" name="lineEdit10"/>
-         </item>
-         <item row="6" column="6">
-          <widget class="QLineEdit" name="lineEdit14"/>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>25</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="lineEdit1"/>
          </item>
          <item row="0" column="2">
           <spacer name="horizontalSpacer_3">
@@ -547,21 +499,31 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
            </property>
           </spacer>
          </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit4"/>
-         </item>
-         <item row="3" column="6">
-          <widget class="QLineEdit" name="lineEdit11"/>
-         </item>
-         <item row="4" column="6">
-          <widget class="QLineEdit" name="lineEdit12"/>
-         </item>
-         <item row="1" column="5">
-          <widget class="QLabel" name="label_9">
-           <property name="text">
-            <string>5000</string>
+         <item row="0" column="3">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-          </widget>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="4">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item row="0" column="5">
           <widget class="QLabel" name="label_8">
@@ -570,12 +532,25 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="5">
-          <widget class="QLabel" name="label_13">
+         <item row="0" column="6">
+          <widget class="QLineEdit" name="lineEdit8"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>100000</string>
+            <string>25</string>
            </property>
           </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>5000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6">
+          <widget class="QLineEdit" name="lineEdit9"/>
          </item>
          <item row="2" column="0">
           <widget class="QLabel" name="label_3">
@@ -584,6 +559,9 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
            </property>
           </widget>
          </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit3"/>
+         </item>
          <item row="2" column="5">
           <widget class="QLabel" name="label_10">
            <property name="text">
@@ -591,25 +569,113 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit3"/>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
          </item>
-         <item row="5" column="6">
-          <widget class="QLineEdit" name="lineEdit13"/>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="lineEdit4"/>
+         </item>
+         <item row="3" column="5">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>25000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="6">
+          <widget class="QLineEdit" name="lineEdit11"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>250</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="lineEdit5"/>
+         </item>
+         <item row="4" column="5">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>50000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="6">
+          <widget class="QLineEdit" name="lineEdit12"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>500</string>
+           </property>
+          </widget>
          </item>
          <item row="5" column="1">
           <widget class="QLineEdit" name="lineEdit6"/>
          </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit1"/>
+         <item row="5" column="5">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>100000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="6">
+          <widget class="QLineEdit" name="lineEdit13"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>1000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLineEdit" name="lineEdit7"/>
+         </item>
+         <item row="6" column="5">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>250000</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="6">
+          <widget class="QLineEdit" name="lineEdit14"/>
+         </item>
+         <item row="7" column="5">
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>500000</string>
+           </property>
+          </widget>
          </item>
          <item row="7" column="6">
           <widget class="QLineEdit" name="lineEdit15"/>
+         </item>
+         <item row="8" column="1">
+          <widget class="QPushButton" name="btnAutoCalc">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 85, 255);</string>
+           </property>
+           <property name="text">
+            <string>Calculate Autos</string>
+           </property>
+          </widget>
          </item>
          <item row="8" column="6">
           <widget class="QPushButton" name="btnCalculate">
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 255);</string>
            </property>
            <property name="text">
             <string>Calculate</string>
@@ -628,6 +694,113 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
             <string>Clear</string>
            </property>
           </widget>
+         </item>
+         <item row="2" column="6">
+          <widget class="QLineEdit" name="lineEdit10"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEdit2"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QRadioButton" name="radioBtnTry">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>320</y>
+          <width>141</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TRY</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="radioBtnUsd">
+        <property name="geometry">
+         <rect>
+          <x>830</x>
+          <y>350</y>
+          <width>121</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>USD</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>530</x>
+          <y>380</y>
+          <width>431</width>
+          <height>261</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Comments</string>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>10</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLineEdit" name="comment1"/>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="comment2"/>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>20</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_30">
+           <property name="text">
+            <string>30</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLineEdit" name="comment3"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="label_31">
+           <property name="text">
+            <string>40</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="comment4"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_32">
+           <property name="text">
+            <string>50</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLineEdit" name="comment5"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="label_33">
+           <property name="text">
+            <string>100</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="comment6"/>
          </item>
         </layout>
        </widget>
@@ -649,7 +822,6 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>mainTab</tabstop>
   <tabstop>boxWebsite</tabstop>
   <tabstop>boxQuality</tabstop>
   <tabstop>boxSM</tabstop>
@@ -657,21 +829,6 @@ font: 75 11pt &quot;Century Gothic&quot;;</string>
   <tabstop>boxCountry</tabstop>
   <tabstop>lineProvider</tabstop>
   <tabstop>lineSrvPrice</tabstop>
-  <tabstop>lineEdit2</tabstop>
-  <tabstop>lineEdit7</tabstop>
-  <tabstop>lineEdit5</tabstop>
-  <tabstop>lineEdit8</tabstop>
-  <tabstop>lineEdit9</tabstop>
-  <tabstop>lineEdit10</tabstop>
-  <tabstop>lineEdit14</tabstop>
-  <tabstop>lineEdit4</tabstop>
-  <tabstop>lineEdit11</tabstop>
-  <tabstop>lineEdit12</tabstop>
-  <tabstop>lineEdit3</tabstop>
-  <tabstop>lineEdit13</tabstop>
-  <tabstop>lineEdit6</tabstop>
-  <tabstop>lineEdit1</tabstop>
-  <tabstop>lineEdit15</tabstop>
   <tabstop>btnCalculate</tabstop>
   <tabstop>btnClear</tabstop>
  </tabstops>

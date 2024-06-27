@@ -10,3 +10,12 @@ def currency_converter():
     
     return result
 
+def currency_converter_to_real():
+    url = "https://www.x-rates.com/calculator/?from=USD&to=BRL&amount=1"
+    response = rq.get(url)
+    soup = bs(response.text, 'html.parser')
+    result = soup.find('span', {'class': 'ccOutputRslt'}).text
+    result = round(float(result.strip('BRL').strip()),2)
+
+    return result
+
