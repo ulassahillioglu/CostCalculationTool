@@ -9,12 +9,13 @@ from PyQt5 import QtWidgets
 import sys
 from os import path
 from PyQt5.uic import loadUiType
-from conv import currency_converter, currency_converter_to_real
+from conv import currency_converter, currency_converter_to_real,currency_converter_to_real_from_try
 
 FORM_CLASS, _ = loadUiType(path.join(path.dirname(__file__), "main.ui"))
 
 
 class MainApp(QMainWindow, FORM_CLASS):
+    DEFAULT_HEADERS = ["Site", "Sosyal Medya", "Ürün", "Ülke", "Kalite", "Tedarikçi", "Adet", "Fiyat", "Maliyet", "Maliyet Oranı"]
     def __init__(self, parent=None):
         super(MainApp, self).__init__(parent)
         QMainWindow.__init__(self)
@@ -22,6 +23,7 @@ class MainApp(QMainWindow, FORM_CLASS):
         self.Handel_Buttons(self)
         self.exchange_rate = currency_converter()
         self.exchange_rate_real = currency_converter_to_real()
+        self.exchange_rate_real_from_try = currency_converter_to_real_from_try()
         self.tr_scraper = 10.0
         self.en_scraper = 0.50
         self.lineEdit = [
@@ -42,6 +44,7 @@ class MainApp(QMainWindow, FORM_CLASS):
             "15",
         ]
         
+        self.headers_modified = False
         header = self.tablePrice.horizontalHeader()
         header.setStyleSheet("QHeaderView::section { background-color: #3f57cc; }")
         
@@ -112,6 +115,7 @@ class MainApp(QMainWindow, FORM_CLASS):
         self.tablePrice.setColumnCount(9)
         headers = ["Website", "Oto Fiyat", "Oto Fiyat (Scraper)", "Provider", "Miktar", "Fiyat", "Oto Maliyet", "Oto Yüzde", "Oto Yüzde (Scraper)"]
         self.tablePrice.setHorizontalHeaderLabels(headers)
+        self.headers_modified = True
 
         for index, quantity in enumerate(quantities):
             try:
@@ -164,6 +168,11 @@ class MainApp(QMainWindow, FORM_CLASS):
 
 
     def calculate(self):
+        if self.headers_modified:
+            self.tablePrice.setColumnCount(len(self.DEFAULT_HEADERS))  # Ensure the column count matches the headers
+            self.tablePrice.setHorizontalHeaderLabels(self.DEFAULT_HEADERS)
+            self.headers_modified = False  # Reset the flag
+
         quantities = [
             "10",
             "25",
@@ -181,7 +190,7 @@ class MainApp(QMainWindow, FORM_CLASS):
             "250000",
             "500000",
         ]
-        quantities_comments = ["10","20","30","40","50","100","250","500"]
+        quantities_comments = ["10", "20", "30", "40", "50", "100", "250", "500"]
 
         main_list = []
         website = self.boxWebsite.currentText()
@@ -195,37 +204,38 @@ class MainApp(QMainWindow, FORM_CLASS):
             chosen_currency = "USD"
         elif self.radioBtnTry.isChecked():
             chosen_currency = "TRY"
-        
+
         if product.lower() == "comments":
             quantities = quantities_comments
 
         self.tablePrice.setRowCount(0)
-        self.tablePrice.setColumnCount(10)  # Set to the number of columns in your data
+        # self.tablePrice.setColumnCount(10)  # Set to the number of columns in your data
 
         for index, quantity in enumerate(quantities):
-            if len(quantities)<=6:
+            if len(quantities) <= 8:
                 try:
                     line_edit = self.findChild(QLineEdit, f"comment{index+1}")
                     if website.lower() == "pop":
-                        our_price = round(float(line_edit.text())*self.exchange_rate_real,2)
-                        srv_price = float(self.lineSrvPrice.text())*self.exchange_rate_real
+                        if chosen_currency == "USD":
+                            our_price = round(float(line_edit.text()) * self.exchange_rate_real, 2)
+                            srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real
+                        else:
+                            our_price = round(float(line_edit.text()) * self.exchange_rate_real_from_try, 2)
+                            srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real_from_try
+                        
+                    elif website.lower() == 'it' and chosen_currency == "USD":
+                        our_price = round(float(line_edit.text()), 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
 
-                    elif website.lower()=='it' and chosen_currency == "USD":
-                        our_price = round(float(line_edit.text()),2)
-                        srv_price = float(self.lineSrvPrice.text())*self.exchange_rate
-
-                    elif website.lower()=="if" and chosen_currency == "TRY":
-                        our_price = round(float(line_edit.text()),2)
-                        srv_price = float(self.lineSrvPrice.text())/self.exchange_rate
+                    elif website.lower() == "if" and chosen_currency == "TRY":
+                        our_price = round(float(line_edit.text()), 2)
+                        srv_price = float(self.lineSrvPrice.text()) / self.exchange_rate
                     else:
                         our_price = float(line_edit.text())
                         srv_price = float(self.lineSrvPrice.text())
                     cost = round((int(quantity) * srv_price / 1000), 5)
                     print(f"cost: {cost:.6f}")
                     percentage = format((cost * 100) / our_price, ".3f")
-                    
-                    
-
 
                     print("percentage", percentage)
                     main_list.append(
@@ -249,16 +259,20 @@ class MainApp(QMainWindow, FORM_CLASS):
                 try:
                     line_edit = self.findChild(QLineEdit, f"lineEdit{index+1}")
                     if website.lower() == "pop":
-                        our_price = round(float(line_edit.text())*self.exchange_rate_real,2)
-                        srv_price = float(self.lineSrvPrice.text())*self.exchange_rate_real
+                        if chosen_currency == "USD":
+                            our_price = round(float(line_edit.text()) * self.exchange_rate_real, 2)
+                            srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real
+                        else:
+                            our_price = round(float(line_edit.text()) * self.exchange_rate_real_from_try, 2)
+                            srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real_from_try
 
-                    elif website.lower()=='it' and chosen_currency == "USD":
-                        our_price = round(float(line_edit.text()),2)
-                        srv_price = float(self.lineSrvPrice.text())*self.exchange_rate
-                    
-                    elif website.lower()=="if" and chosen_currency == "TRY":
-                        our_price = round(float(line_edit.text()),2)
-                        srv_price = float(self.lineSrvPrice.text())/self.exchange_rate
+                    elif website.lower() == 'it' and chosen_currency == "USD":
+                        our_price = round(float(line_edit.text()), 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
+
+                    elif website.lower() == "if" and chosen_currency == "TRY":
+                        our_price = round(float(line_edit.text()), 2)
+                        srv_price = float(self.lineSrvPrice.text()) / self.exchange_rate
 
                     else:
                         our_price = float(line_edit.text())
@@ -266,9 +280,6 @@ class MainApp(QMainWindow, FORM_CLASS):
                     cost = round((int(quantity) * srv_price / 1000), 5)
                     print(f"cost: {cost:.6f}")
                     percentage = format((cost * 100) / our_price, ".3f")
-                    
-                    
-
 
                     print("percentage", percentage)
                     main_list.append(
@@ -297,6 +308,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                 )
 
 
+
 def main():
     app = QApplication(sys.argv)
     window = MainApp()
@@ -306,3 +318,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
