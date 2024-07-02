@@ -51,6 +51,7 @@ class MainApp(QMainWindow, FORM_CLASS):
     def Handel_Buttons(self, parent):
         self.btnCalculate.clicked.connect(self.calculate)
         self.btnAutoCalc.clicked.connect(self.calculate_auto)
+        self.btnMontlyCalc.clicked.connect(self.calculate_monthly_price)
         self.btnClear.clicked.connect(self.clear)
 
     def clear(self):
@@ -310,6 +311,90 @@ class MainApp(QMainWindow, FORM_CLASS):
                     row_number, column_number, QTableWidgetItem(str(data))
                 )
 
+    def calculate_monthly_price(self):
+        quantities = [
+            "10",
+            "25",
+            "50",
+            "100",
+            "250",
+            "500",
+            "1000",
+            "2500",
+            "5000",
+            "10000",
+            "25000",
+            "50000",
+            "100000",
+            "250000",
+            "500000",
+        ]
+        quantities_comments = ["10", "20", "30", "40", "50", "100","250","500"]
+
+        main_list = []
+        website = self.boxWebsite.currentText()
+        sm = self.boxSM.currentText()
+        product = self.boxProduct.currentText()
+        quality = self.boxQuality.currentText()
+        country = self.boxCountry.currentText()
+        provider = self.lineProvider.text()
+
+        if self.radioBtnUsd.isChecked():
+            chosen_currency = "USD"
+        elif self.radioBtnTry.isChecked():
+            chosen_currency = "TRY"
+
+        if product.lower() == "comments":
+            quantities = quantities_comments
+
+        headers = ["Website", "Aylık Fiyat", "Provider", "Miktar", "Fiyat", "Aylık Maliyet", "Aylık Yüzde"]
+        self.tablePrice.setRowCount(0)
+        self.tablePrice.setColumnCount(len(headers))
+        self.tablePrice.setHorizontalHeaderLabels(headers)
+        self.headers_modified = True
+
+        for index, quantity in enumerate(quantities):
+            try:
+                line_edit_name = f"comment{index+1}" if product.lower() == "comments" else f"lineEdit{index+1}"
+                line_edit = self.findChild(QLineEdit, line_edit_name)
+                our_price = float(line_edit.text())
+
+                
+                monthly_price = our_price * 30
+                
+
+                if website.lower() == "it" and chosen_currency == "USD":
+                    srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
+                    
+                elif website.lower() == "if" and chosen_currency == "TRY":
+                    srv_price = float(self.lineSrvPrice.text()) / self.exchange_rate
+                else:
+                    srv_price = float(self.lineSrvPrice.text())
+
+                cost = round((int(quantity) * srv_price / 1000), 5)
+                percentage = format((cost * 100) / monthly_price, ".3f")
+                
+
+                main_list.append(
+                    [
+                        website,
+                        monthly_price,
+                        provider,
+                        quantity,
+                        str(our_price),
+                        f"{cost:.5f}",
+                        percentage,
+                    ]
+                )
+            except Exception as e:
+                print(e)
+
+        for row_number, row_data in enumerate(main_list):
+            self.tablePrice.insertRow(row_number)
+            for column_number, data in enumerate(row_data):
+                self.tablePrice.setItem(
+                    row_number, column_number, QTableWidgetItem(str(data))
+                )        
 
 
 def main():

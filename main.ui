@@ -700,16 +700,6 @@ font: 75 11pt &quot;Century Gothic&quot;;
            </property>
           </widget>
          </item>
-         <item row="8" column="1">
-          <widget class="QPushButton" name="btnAutoCalc">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(0, 85, 255);</string>
-           </property>
-           <property name="text">
-            <string>Calculate Autos</string>
-           </property>
-          </widget>
-         </item>
          <item row="8" column="6">
           <widget class="QPushButton" name="btnCalculate">
            <property name="cursor">
@@ -780,6 +770,28 @@ font: 75 11pt &quot;Century Gothic&quot;;
          </item>
          <item row="7" column="6">
           <widget class="QLineEdit" name="lineEdit15"/>
+         </item>
+         <item row="9" column="1" colspan="2">
+          <widget class="QPushButton" name="btnMontlyCalc">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255,255,255);</string>
+           </property>
+           <property name="text">
+            <string>Calculate Monthly</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1" colspan="2">
+          <widget class="QPushButton" name="btnAutoCalc">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(0, 85, 255);
+color: rgb(255,255,255);</string>
+           </property>
+           <property name="text">
+            <string>Calculate Autos</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
