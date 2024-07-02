@@ -347,7 +347,7 @@ class MainApp(QMainWindow, FORM_CLASS):
         if product.lower() == "comments":
             quantities = quantities_comments
 
-        headers = ["Website", "Aylık Fiyat", "Provider", "Miktar", "Fiyat", "Aylık Maliyet", "Aylık Yüzde"]
+        headers = ["Website", "Aylık Fiyat", "Provider", "Miktar", "Fiyat", "Aylık Maliyet", "Aylık Yüzde Maliyet"]
         self.tablePrice.setRowCount(0)
         self.tablePrice.setColumnCount(len(headers))
         self.tablePrice.setHorizontalHeaderLabels(headers)
@@ -360,7 +360,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                 our_price = float(line_edit.text())
 
                 
-                monthly_price = our_price * 30
+                monthly_price = round(our_price * 30,3)
                 
 
                 if website.lower() == "it" and chosen_currency == "USD":
@@ -372,7 +372,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                     srv_price = float(self.lineSrvPrice.text())
 
                 cost = round((int(quantity) * srv_price / 1000), 5)
-                percentage = format((cost * 100) / monthly_price, ".3f")
+                percentage = format((cost / monthly_price)*100*30, ".3f")
                 
 
                 main_list.append(
@@ -383,7 +383,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                         quantity,
                         str(our_price),
                         f"{cost:.5f}",
-                        percentage,
+                        '% ' + percentage,
                     ]
                 )
             except Exception as e:
