@@ -132,6 +132,9 @@ class MainApp(QMainWindow, FORM_CLASS):
 
                 if website.lower() == "it" and chosen_currency == "USD":
                     srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
+                    
+                elif website.lower() == "if" and chosen_currency == "TRY":
+                    srv_price = float(self.lineSrvPrice.text()) / self.exchange_rate
                 else:
                     srv_price = float(self.lineSrvPrice.text())
 
