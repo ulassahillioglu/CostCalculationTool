@@ -131,7 +131,16 @@ class MainApp(QMainWindow, FORM_CLASS):
                     auto_price = round(our_price * 2.25, 3)
                     auto_price_with_scraper = auto_price + self.en_scraper
 
-                if website.lower() == "it" and chosen_currency == "USD":
+                if website.lower() == "pop":
+                    if chosen_currency == "USD":
+                        our_price = round(float(line_edit.text()) * self.exchange_rate_real, 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real
+
+                    else:
+                        our_price = round(float(line_edit.text()) * self.exchange_rate_real_from_try, 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real_from_try
+
+                elif website.lower() == "it" and chosen_currency == "USD":
                     srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
                     
                 elif website.lower() == "if" and chosen_currency == "TRY":
