@@ -140,7 +140,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                     srv_price = float(self.lineSrvPrice.text())
 
                 cost = round((int(quantity) * srv_price / 1000), 5)
-                percentage = format((cost * 100) / auto_price, ".3f")
+                percentage = format(((cost * 100) / auto_price) * 5, ".3f")
                 percentage_with_scraper = format((cost * 100 / auto_price_with_scraper) * 5, ".3f")
 
                 main_list.append(
@@ -362,8 +362,18 @@ class MainApp(QMainWindow, FORM_CLASS):
                 
                 monthly_price = round(our_price * 30,3)
                 
+                if website.lower() == "pop":
+                    if chosen_currency == "USD":
+                        our_price = round(float(line_edit.text()) * self.exchange_rate_real, 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real
+                        monthly_price = round(our_price * 30,3)
 
-                if website.lower() == "it" and chosen_currency == "USD":
+                    else:
+                        our_price = round(float(line_edit.text()) * self.exchange_rate_real_from_try, 2)
+                        srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate_real_from_try
+                        monthly_price = round(our_price * 30,3)
+
+                elif website.lower() == "it" and chosen_currency == "USD":
                     srv_price = float(self.lineSrvPrice.text()) * self.exchange_rate
                     
                 elif website.lower() == "if" and chosen_currency == "TRY":
