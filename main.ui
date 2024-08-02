@@ -192,6 +192,11 @@ font: 75 11pt &quot;Century Gothic&quot;;
          </item>
          <item row="5" column="0">
           <widget class="QComboBox" name="boxQuality">
+          <item>
+            <property name="text">
+             <string>VIP</string>
+            </property>
+           </item>
            <item>
             <property name="text">
              <string>Real</string>
