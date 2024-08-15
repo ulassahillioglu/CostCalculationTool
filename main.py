@@ -161,8 +161,8 @@ class MainApp(QMainWindow, FORM_CLASS):
                         quantity,
                         str(our_price),
                         f"{cost:.5f}",
-                        percentage,
-                        percentage_with_scraper,
+                        '% ' + percentage,
+                        '% ' + percentage_with_scraper,
                     ]
                 )
             except Exception as e:
@@ -262,7 +262,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                             quantity,
                             str(our_price),
                             f"{cost:.5f}",
-                            percentage,
+                            '% ' + percentage,
                         ]
                     )
 
@@ -306,7 +306,7 @@ class MainApp(QMainWindow, FORM_CLASS):
                             quantity,
                             str(our_price),
                             f"{cost:.5f}",
-                            percentage,
+                            '% ' + percentage,
                         ]
                     )
 
