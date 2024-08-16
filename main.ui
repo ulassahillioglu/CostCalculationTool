@@ -258,6 +258,11 @@ font: 75 11pt &quot;Century Gothic&quot;;
            </item>
            <item>
             <property name="text">
+             <string>Story Views</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
              <string>Shorts Views</string>
             </property>
            </item>
