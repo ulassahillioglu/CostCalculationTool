@@ -45,7 +45,7 @@ class MainApp(QMainWindow, FORM_CLASS):
         ]
         self.quantities = [
             "10",
-            "25",
+            "20",
             "50",
             "100",
             "250",

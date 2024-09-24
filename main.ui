@@ -477,6 +477,11 @@ font: 75 11pt &quot;Century Gothic&quot;;
            </item>
            <item>
             <property name="text">
+             <string>Mixcloud</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
              <string>Pinterest</string>
             </property>
            </item>
@@ -622,7 +627,7 @@ font: 75 11pt &quot;Century Gothic&quot;;
          <item row="1" column="0">
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>25</string>
+            <string>20</string>
            </property>
           </widget>
          </item>
